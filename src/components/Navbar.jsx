@@ -15,6 +15,14 @@ export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [isMenuOpen]);
+
+  useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
@@ -65,12 +73,13 @@ export const Navbar = () => {
         </button>
         <div
           className={cn(
-            "fixed inset-0 bg-background/95 background-blur-md z-40 flex flex-col item-center justify-center",
+            "fixed inset-0 bg-background/95 background-blur-md z-40 flex flex-col items-center justify-center",
             "transition-all duration-300 md:hidden",
             isMenuOpen
               ? "opacity-100 pointer-events-auto"
               : "opacity-0 pointer-events-none "
           )}
+          style={{ height: "100dvh" }}
         >
           <div className="flex flex-col space-y-8 text-xl">
             {navItems.map((item, key) => (
