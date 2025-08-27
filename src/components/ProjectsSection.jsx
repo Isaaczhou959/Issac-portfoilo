@@ -3,7 +3,7 @@ import { ExternalLink, GithubIcon } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "Learning management system",
+    title: "MyEstore",
     description:
       "A full-stack web application allows students to register, log in, and manage their learning progress.",
     image: "projects/Crouse_Mate.png",
@@ -13,6 +13,16 @@ const projects = [
   },
   {
     id: 2,
+    title: "Learning management system",
+    description:
+      "A full-stack web application allows students to register, log in, and manage their learning progress.",
+    image: "projects/Crouse_Mate.png",
+    tags: ["React", "MongoDB", "Node.js"],
+    demoUrl: "#",
+    githubUrl: "#",
+  },
+  {
+    id: 3,
     title: "Picture seeker",
     description:
       "Built with modern web technologies, it integrates with an external image API to fetch and display results dynamically.",
@@ -38,7 +48,7 @@ export const ProjectsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, key) => (
             <div
-              key={key}
+              key={project.id}
               className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
             >
               <div className="h-48 overflow-hidden">
@@ -53,7 +63,10 @@ export const ProjectsSection = () => {
                 {" "}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
-                    <span className="px-2 py-1 text-xs border font-medium rounded-full bg-secondary text-secondary-foreground">
+                    <span
+                      key={tag}
+                      className="px-2 py-1 text-xs border font-medium rounded-full bg-secondary text-secondary-foreground"
+                    >
                       {tag}
                     </span>
                   ))}
