@@ -4,6 +4,7 @@
   --color-border: hsl(var(--border));
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
+  --color-homebackground: hsl(var(--homebackground));
 
   --color-midnight: #06091f;
   --color-navy: #161a31;
@@ -113,11 +114,12 @@
 @layer base {
   :root {
     --border: 214 32% 91%;
-    --background: 210 40% 98%;
+    --background: 40, 20%, 95%;
     --foreground: 222 47% 11%;
     --primary: 250 47% 60%;
     --primary-foreground: 210 40% 98%;
     --card: 0 0% 100%;
+    --homebackground: 170, 48%, 78%;
   }
   .dark {
     --border: 217 33% 20%;
@@ -126,6 +128,7 @@
     --primary: 250 65% 65%;
     --primary-foreground: 213 31% 91%;
     --card: 222 47% 8%;
+    --homebackground: 170, 48%, 48%;
   }
   * {
     @apply border-border;

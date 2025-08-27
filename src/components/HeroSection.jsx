@@ -10,7 +10,7 @@ export const HeroSection = () => {
       <div className="rounded-3xl bg-clip-text text-center mt-20 md:mt-40 md:text-left z-10">
         {/*Desktop view*/}
         <div className="flex-col hidden md:flex c-space">
-          <h1 className="text-4xl font-medium text-white">
+          <h1 className="text-4xl font-medium">
             <span className="animate-fade-in">Hi I'm </span>
             <span className="text-primary opacity-0 animate-fade-in-delay-1">
               Issac
@@ -19,7 +19,7 @@ export const HeroSection = () => {
               Zhou
             </span>
           </h1>
-          <div className="flex flex-col opacity-0 text-white animate-fade-in-delay-3">
+          <div className="flex flex-col opacity-0 animate-fade-in-delay-3">
             <p className="text-5xl  font-medium">
               A Developer <br /> passionate about
             </p>
@@ -30,7 +30,7 @@ export const HeroSection = () => {
                 className="font-black text-white text-8xl text-primary"
               />
             </div>
-            <p className="text-4xl font-medium">web solutions</p>
+            <p className="text-4xl text-white font-medium">web solutions</p>
           </div>
 
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">
@@ -42,14 +42,12 @@ export const HeroSection = () => {
         {/* Mobile view */}
         <div className="flex flex-col items-center flex-col space-y-6 md:hidden mt-8">
           <h2 className="text-3xl font-medium">
-            <span className="text-white animate-fade-in">Hi,I'm </span>
+            <span className=" animate-fade-in">Hi,I'm </span>
             <span className="text-primary animate-fade-in-delay-1">Issac</span>
-            <span className="text-white opacity-0 animate-fade-in-delay-2">
-              Zhou
-            </span>
+            <span className=" opacity-0 animate-fade-in-delay-2">Zhou</span>
           </h2>
           <div>
-            <p className="text-5xl font-black text-white animate-fade-in-delay-3 ">
+            <p className="text-5xl font-black animate-fade-in-delay-3 ">
               Building
             </p>
             <div>
@@ -58,7 +56,7 @@ export const HeroSection = () => {
                 className="font-bold text-primary text-6xl pl-5"
               />
             </div>
-            <p className="text-3xl text-white font-black">Web Applications</p>
+            <p className="text-3xl font-black">Web Applications</p>
           </div>
         </div>
       </div>

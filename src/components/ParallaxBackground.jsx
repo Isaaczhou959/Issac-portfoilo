@@ -8,8 +8,8 @@ const ParallaxBackground = () => {
   const mountain2Y = useTransform(x, [0, 0.5], ["0%", "30%"]);
   const mountain1Y = useTransform(x, [0, 0.5], ["0%", "0%"]);
   return (
-    <section className="absolute inset-0 bg-black/40">
-      <div className="bg-gray-800 relative h-screen overflow-y-hidden">
+    <section className="absolute inset-0">
+      <div className="bg-homebackground relative h-screen overflow-y-hidden">
         {/* <div
           className="absolute inset-0 w-full h-screen z-0"
           style={{

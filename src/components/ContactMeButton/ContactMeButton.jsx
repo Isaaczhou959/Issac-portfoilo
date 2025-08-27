@@ -6,10 +6,10 @@ export const ContactMeButton = () => {
   return (
     <div className="fixed bottom-8 right-8 z-50">
       <button
-        class="button"
+        className="button"
         onClick={() => (window.location.href = "#contact")}
       >
-        <p class="button__text">
+        <p className="button__text">
           <span style={{ "--index": "0" }}>C</span>
           <span style={{ "--index": "1" }}>O</span>
           <span style={{ "--index": "2" }}>N</span>
@@ -30,12 +30,12 @@ export const ContactMeButton = () => {
           <span style={{ "--index": "17" }}>T</span>
         </p>
 
-        <div class="button__circle">
+        <div className="button__circle">
           <svg
             viewBox="0 0 14 15"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            class="button__icon"
+            className="button__icon"
             width="14"
           >
             <path
@@ -49,7 +49,7 @@ export const ContactMeButton = () => {
             fill="none"
             width="14"
             xmlns="http://www.w3.org/2000/svg"
-            class="button__icon button__icon--copy"
+            className="button__icon button__icon--copy"
           >
             <path
               d="M13.376 11.552l-.264-10.44-10.44-.24.024 2.28 6.96-.048L.2 12.56l1.488 1.488 9.432-9.432-.048 6.912 2.304.024z"
