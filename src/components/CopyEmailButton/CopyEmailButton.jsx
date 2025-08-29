@@ -1,4 +1,4 @@
-import { Copy } from "lucide-react";
+import { CheckCheck, Copy } from "lucide-react";
 import { useState } from "react";
 
 export const CopyEmailButton = () => {
@@ -10,17 +10,24 @@ export const CopyEmailButton = () => {
     setCopied(true);
     setTimeout(() => {
       setCopied(false);
-    });
+    }, [2000]);
   };
   return (
     <button
       onClick={copyToClipboard}
       className="relative px-1 py-4 text-sm text-center rounded-full font-bold bg-black w-[12rem] cursor-pointer overflow-hidden"
     >
-      <p className="flex items-center justify-center text-white gap-2">
-        <Copy />
-        Copy Email Address
-      </p>
+      {copied ? (
+        <p className="text-white flex items-center justify-center gap-2">
+          <CheckCheck className="w-5" />
+          Email has Copied!
+        </p>
+      ) : (
+        <p className="flex items-center justify-center text-white gap-2">
+          <Copy className="w-5" />
+          Copy Email Address
+        </p>
+      )}
     </button>
   );
 };
