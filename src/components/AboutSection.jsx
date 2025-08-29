@@ -1,12 +1,94 @@
 import { cn } from "@/lib/utils";
-import { Briefcase, Code, User } from "lucide-react";
+import { Drag } from "./Drag/Drag";
+import { useRef } from "react";
+import { Globe } from "./ui/globe";
+import { CopyEmailButton } from "./CopyEmailButton/CopyEmailButton";
 export const AboutSection = () => {
+  const grid2Contianer = useRef();
   return (
-    <section id="about" className="py-24 px-4 relative">
-      <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          About <span className="text-primary">me</span>
-        </h2>
+    <section id="about" className="section-spacing c-space">
+      <h2 className="text-heading">
+        About <span className="text-primary">me</span>
+      </h2>
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-6 max-w-6xl mx-auto md:auto-rows-[18rem] mt-12">
+        {/* The first grid */}
+        <div className="flex items-end grid-default-color grid-1">
+          <img
+            src="public/aboutme/coding-pov.png"
+            className="absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
+          />
+          <div className="z-10 text-white">
+            <p className="headtext">Hi,I'm Issac Zhou</p>
+            <p className="subtext">
+              I’m a passionate Web Developer with a background in Computer
+              Science and experience in technology and customer service.
+            </p>
+          </div>
+          <div className="absolute inset-x-0 pointer-events-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-indigo"></div>
+        </div>
+        {/* The Second grid */}
+        <div className="grid-default-color grid-2">
+          <div
+            ref={grid2Contianer}
+            className="flex items-center justify-center w-full h-full"
+          >
+            <p className="flex items-end text-5xl text-gray-500">
+              CRAFTED IN CODE
+            </p>
+            <Drag
+              image="aboutme/js-logo.png"
+              style={{ rotate: "-20deg", bottom: "10%", left: "10%" }}
+              containerRef={grid2Contianer}
+            />
+            <Drag
+              image="aboutme/react-logo.png"
+              style={{ rotate: "-20deg", top: "20%", left: "50%" }}
+              containerRef={grid2Contianer}
+            />
+            <Drag
+              text={"SOLID"}
+              style={{ rotate: "-30deg", top: "10%", left: "5%" }}
+              containerRef={grid2Contianer}
+            />
+            <Drag
+              text={"GRASP"}
+              style={{ rotate: "30deg", top: "20%", left: "60%" }}
+              containerRef={grid2Contianer}
+            />
+            <Drag
+              text={"Design Patterns"}
+              style={{ rotate: "-20deg", bottom: "20%", left: "60%" }}
+              containerRef={grid2Contianer}
+            />
+            <Drag
+              text={"Design Principles"}
+              style={{ rotate: "20deg", bottom: "10%", left: "20%" }}
+              containerRef={grid2Contianer}
+            />
+          </div>
+        </div>
+        {/* Third grid */}
+        <div className="grid-black-color grid-3">
+          <div className="absolute bottom-6 right-6">
+            <p className="headtext text-white">Where Am I</p>
+            <p className="subtext">I'm based in Australia</p>
+          </div>
+
+          <figure className="absolute left-[-20%] top-[-55%]">
+            <Globe />
+          </figure>
+        </div>
+        {/* Fourth grid */}
+        <div className="grid-special-color grid-4">
+          <div className="flex flex-col items-center justify-center gap-6 size-full">
+            <p className="text-white text-center headtext">Grab my Email</p>
+            <CopyEmailButton />
+          </div>
+        </div>
+        {/* fifth grid */}
+        <div className="grid-default-color grid-5"></div>
+      </div>
+      {/* <div className="container mx-auto max-w-5xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold">
@@ -89,7 +171,7 @@ export const AboutSection = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };
