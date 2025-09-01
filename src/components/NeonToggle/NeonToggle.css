@@ -203,13 +203,13 @@
   }
 }
 
-.stars {
+.toggle-stars {
   transform: translateY(-32px);
   opacity: 0;
   transition: 0.4s;
 }
 
-.star {
+.toggle-star {
   fill: white;
   position: absolute;
   -webkit-transition: 0.4s;
@@ -219,7 +219,7 @@
   animation-iteration-count: infinite;
 }
 
-#input:checked + .slider .stars {
+#input:checked + .slider .toggle-stars {
   -webkit-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);

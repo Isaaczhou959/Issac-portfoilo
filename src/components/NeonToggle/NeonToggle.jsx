@@ -3,7 +3,7 @@ import "./NeonToggle.css";
 export default function NeonToggle({ darkMode, toggle }) {
   return (
     <label className="switch">
-      <input id="input" type="checkbox" checked={darkMode} onClick={toggle} />
+      <input id="input" type="checkbox" checked={darkMode} onChange={toggle} />
       <div className="slider round">
         <div className="sun-moon">
           <svg id="moon-dot-1" className="moon-dot" viewBox="0 0 100 100">
@@ -44,17 +44,17 @@ export default function NeonToggle({ darkMode, toggle }) {
             <circle cx="50" cy="50" r="50"></circle>
           </svg>
         </div>
-        <div className="stars">
-          <svg id="star-1" className="star" viewBox="0 0 20 20">
+        <div className="toggle-stars" stroke="none">
+          <svg id="star-1" className="toggle-star" viewBox="0 0 20 20">
             <path d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"></path>
           </svg>
-          <svg id="star-2" className="star" viewBox="0 0 20 20">
+          <svg id="star-2" className="toggle-star" viewBox="0 0 20 20">
             <path d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"></path>
           </svg>
-          <svg id="star-3" className="star" viewBox="0 0 20 20">
+          <svg id="star-3" className="toggle-star" viewBox="0 0 20 20">
             <path d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"></path>
           </svg>
-          <svg id="star-4" className="star" viewBox="0 0 20 20">
+          <svg id="star-4" className="toggle-star" viewBox="0 0 20 20">
             <path d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"></path>
           </svg>
         </div>

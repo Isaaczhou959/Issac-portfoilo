@@ -16,7 +16,6 @@ export const ThemeToggle = () => {
       document.documentElement.classList.add("dark");
     }
   }, []);
-  console.log(isDarkMode);
 
   const toggle = () => {
     if (isDarkMode) {
@@ -31,10 +30,11 @@ export const ThemeToggle = () => {
   };
 
   return (
-    <div className="fixed max-sm:hidden top-4 right-5 z-50">
+    <div className="fixed max-sm:hidden top-4 right-5 z-100">
       <NeonToggle darkMode={isDarkMode} toggle={toggle} />
     </div>
 
+    // old toggle button style
     // <button
     //   onClick={toggle}
     //   className={cn(
