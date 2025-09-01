@@ -1,14 +1,41 @@
-import { ExternalLink, GithubIcon } from "lucide-react";
+import { ArrowRightIcon } from "lucide-react";
+import { ProjectDetail } from "./ProjectDetail/ProjectDetail";
+import { useState } from "react";
+import { motion, useMotionValue, useSpring } from "motion/react";
 
 const projects = [
   {
     id: 1,
     title: "MyEstore",
     description:
-      "A full-stack web application allows students to register, log in, and manage their learning progress.",
-    image: "projects/Crouse_Mate.png",
-    tags: ["React", "MongoDB", "Node.js"],
-    demoUrl: "#",
+      "Smart E-shop is an online store where users can browse products and complete purchases securely.",
+    subDescription: [
+      "This project is an e-commerce web application built with Next.js and React.",
+      "It integrates Stripe for secure payment processing and leverages Vercel for seamless deployment and hosting.",
+      "Designed a responsive frontend with Tailwind CSS, enhancing user experience.",
+      "This application provides a complete shopping experience with features such as product display, cart management, and a secure checkout flow.",
+    ],
+
+    image: "projects/eshop.png",
+    tags: [
+      {
+        id: 1,
+        name: "NextJS",
+        path: "skills/NextJS-Dark.svg",
+      },
+      {
+        id: 2,
+        name: "TailwindCSS",
+        path: "skills/TailwindCSS-Dark.svg",
+      },
+      {
+        id: 3,
+        name: "TypeScript",
+        path: "skills/TypeScript.svg",
+      },
+    ],
+
+    demoUrl: "smart-eshop-nextjs-stripe.vercel.app",
     githubUrl: "#",
   },
   {
@@ -16,8 +43,32 @@ const projects = [
     title: "Learning management system",
     description:
       "A full-stack web application allows students to register, log in, and manage their learning progress.",
+    subDescription: [""],
+
     image: "projects/Crouse_Mate.png",
-    tags: ["React", "MongoDB", "Node.js"],
+    tags: [
+      {
+        id: 1,
+        name: "React",
+        path: "skills/React-Dark.svg",
+      },
+      {
+        id: 2,
+        name: "Bootstrap",
+        path: "skills/Bootstrap.svg",
+      },
+      {
+        id: 3,
+        name: "NodeJS",
+        path: "skills/NodeJS-Dark.svg",
+      },
+      {
+        id: 4,
+        name: "MongoDB",
+        path: "skills/MongoDB.svg",
+      },
+    ],
+
     demoUrl: "#",
     githubUrl: "#",
   },
@@ -26,17 +77,137 @@ const projects = [
     title: "Picture seeker",
     description:
       "Built with modern web technologies, it integrates with an external image API to fetch and display results dynamically.",
+    subDescription: [""],
+
     image: "projects/Picture_Seeker.png",
-    tags: ["React", "Bootstrap"],
+    tags: [
+      {
+        id: 1,
+        name: "React",
+        path: "skills/React-Dark.svg",
+      },
+      {
+        id: 2,
+        name: "Bootstrap",
+        path: "skills/Bootstrap.svg",
+      },
+    ],
+
     demoUrl: "#",
     githubUrl: "#",
   },
+  // {
+  //   id: 2,
+  //   title: "Learning management system",
+  //   description:
+  //     "A full-stack web application allows students to register, log in, and manage their learning progress.",
+  //   image: "projects/Crouse_Mate.png",
+  //   tags: ["React", "MongoDB", "Node.js"],
+  //   demoUrl: "#",
+  //   githubUrl: "#",
+  // },
+  // {
+  //   id: 3,
+  //   title: "Picture seeker",
+  //   description:
+  //     "Built with modern web technologies, it integrates with an external image API to fetch and display results dynamically.",
+  //   image: "projects/Picture_Seeker.png",
+  //   tags: ["React", "Bootstrap"],
+  //   demoUrl: "#",
+  //   githubUrl: "#",
+  // },
 ];
 
 export const ProjectsSection = () => {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const springX = useSpring(x, { damping: 10, stiffness: 50 });
+  const springY = useSpring(y, { damping: 10, stiffness: 50 });
+  const handleMouseMove = (e) => {
+    x.set(e.clientX + 20);
+    y.set(e.clientY + 20);
+  };
+  const [preview, setPreview] = useState(null);
   return (
-    <section id="projects" className="py-24 px-4 relative">
-      <div className="container mx-auto max-w-5xl">
+    <section
+      onMouseMove={handleMouseMove}
+      id="projects"
+      className="relative c-space section-spacing max-w-7xl mx-auto"
+    >
+      <h2 className="text-heading">Featured Projects</h2>
+      <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent mt-12 h-[1px] w-full" />
+
+      {projects.map((project) => (
+        <Project
+          key={project.id}
+          {...project}
+          setPreview={setPreview}
+        ></Project>
+      ))}
+      {preview && (
+        <motion.img
+          src={preview}
+          className="fixed top-0 left-0 z-50 object-cover h-56 rounded-lg shadow-lg pointer-events-none w-80"
+          style={{ x: springX, y: springY }}
+        />
+      )}
+    </section>
+  );
+};
+
+const Project = ({
+  title,
+  description,
+  subDescription,
+  demoUrl,
+  image,
+  tags,
+  setPreview,
+}) => {
+  const [isHidden, setIsHidden] = useState(false);
+  return (
+    <>
+      <div
+        className="flex-wrap items-center py-10 justify-between space-y-14 sm:flex sm:space-y-0"
+        onMouseEnter={() => setPreview(image)}
+        onMouseLeave={() => setPreview(null)}
+      >
+        <div>
+          <p className="text-2xl">{title}</p>
+          <div className="flex gap-5 mt-2 text-sand">
+            {tags.map((tag) => (
+              <span key={tag.id}>{tag.name}</span>
+            ))}
+          </div>
+        </div>
+        <button
+          onClick={() => {
+            setIsHidden(true);
+          }}
+          className="flex items-center gap-1 cursor-pointer hover-animation"
+        >
+          Read More
+          <ArrowRightIcon />
+        </button>
+      </div>
+      <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent mt-12 h-[1px] w-full" />
+      {isHidden && (
+        <ProjectDetail
+          title={title}
+          description={description}
+          subDescription={subDescription}
+          image={image}
+          tags={tags}
+          href={demoUrl}
+          closePage={setIsHidden}
+        />
+      )}
+    </>
+  );
+};
+
+{
+  /* <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
           Featured <span className="text-primary">Projects</span>
         </h2>
@@ -97,7 +268,5 @@ export const ProjectsSection = () => {
             </div>
           ))}
         </div>
-      </div>
-    </section>
-  );
-};
+      </div> */
+}

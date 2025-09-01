@@ -7,11 +7,11 @@ import { SkillCircles } from "./SkillCircles/SkillCircles";
 export const AboutSection = () => {
   const grid2Contianer = useRef();
   return (
-    <section id="about" className="section-spacing c-space">
+    <section id="about" className="section-spacing c-space max-w-7xl mx-auto">
       <h2 className="text-heading">
         About <span className="text-primary">me</span>
       </h2>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-6 max-w-6xl mx-auto md:auto-rows-[18rem] mt-12">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-6  md:auto-rows-[18rem] mt-12">
         {/* The first grid */}
         <div className="flex items-end grid-default-color grid-1">
           <img
