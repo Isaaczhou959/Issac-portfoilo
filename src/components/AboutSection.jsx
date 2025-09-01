@@ -89,7 +89,7 @@ export const AboutSection = () => {
         {/* fifth grid */}
         <div className="grid-default-color grid-5">
           <div className="z-10 w-[50%]">
-            <p className="headtext">Tech Stack</p>
+            <p className="headtext text-white">Tech Stack</p>
             <p className="subtext">
               Skilled in working with a variety of frameworks, development
               tools, and programming languages, constantly adapt to new
