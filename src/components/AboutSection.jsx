@@ -3,6 +3,7 @@ import { Drag } from "./Drag/Drag";
 import { useRef } from "react";
 import { Globe } from "./ui/globe";
 import { CopyEmailButton } from "./CopyEmailButton/CopyEmailButton";
+import { SkillCircles } from "./SkillCircles/SkillCircles";
 export const AboutSection = () => {
   const grid2Contianer = useRef();
   return (
@@ -86,7 +87,19 @@ export const AboutSection = () => {
           </div>
         </div>
         {/* fifth grid */}
-        <div className="grid-default-color grid-5"></div>
+        <div className="grid-default-color grid-5">
+          <div className="z-10 w-[50%]">
+            <p className="headtext">Tech Stack</p>
+            <p className="subtext">
+              Skilled in working with a variety of frameworks, development
+              tools, and programming languages, constantly adapt to new
+              technologies
+            </p>
+          </div>
+          <div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125">
+            <SkillCircles />
+          </div>
+        </div>
       </div>
       {/* <div className="container mx-auto max-w-5xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
