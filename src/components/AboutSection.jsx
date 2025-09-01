@@ -69,12 +69,12 @@ export const AboutSection = () => {
         </div>
         {/* Third grid */}
         <div className="grid-black-color grid-3">
-          <div className="absolute bottom-6 right-6">
+          <div className="absolute bottom-6 right-6 z-10">
             <p className="headtext text-white">Where Am I</p>
             <p className="subtext">I'm based in Australia</p>
           </div>
 
-          <figure className="absolute left-[-20%] top-[-55%]">
+          <figure className="absolute left-[-20%] top-[-55%] z-0">
             <Globe />
           </figure>
         </div>
