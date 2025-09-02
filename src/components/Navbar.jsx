@@ -2,11 +2,12 @@ import { cn } from "@/lib/utils";
 import { X, Menu } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
   { name: "Home", href: "#hero" },
   { name: "About", href: "#about" },
-  { name: "Skills", href: "#skills" },
+  // { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
 ];
@@ -41,13 +42,13 @@ export const Navbar = () => {
   return (
     <nav
       className={cn(
-        "bg-black fixed w-full z-40 transition-all duration-300",
+        "fixed w-full z-40 transition-all duration-300",
         show
-          ? "py-5 bg-background/80 backdrop-blur-md shadow-xs translate-y-0"
+          ? "py-5 bg-background/20 backdrop-blur-md shadow-xs translate-y-0"
           : "py-5 -translate-y-full"
       )}
     >
-      <div className="container flex items-center justify-between">
+      <div className="mx-auto max-w-7xl flex justify-between px-5 ">
         <a
           className="text-xl font-bold text-primary flex items-center"
           href="#hero"
@@ -60,12 +61,12 @@ export const Navbar = () => {
 
         {/* desktop version */}
 
-        <div className="hidden md:flex space-x-8">
+        <div className="navbar hidden md:flex space-x-8 items-center ">
           {navItems.map((item, key) => (
             <a
               key={key}
               href={item.href}
-              className="text-foreground hover:text-primary transition-colors duration-300"
+              className="hoverbg text-foreground transition-colors duration-300 inline-block"
             >
               {item.name}
             </a>
@@ -110,6 +111,7 @@ export const Navbar = () => {
             </motion.div>
           )}
         </AnimatePresence>
+        <ThemeToggle />
       </div>
     </nav>
   );

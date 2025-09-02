@@ -30,7 +30,7 @@ export const ThemeToggle = () => {
   };
 
   return (
-    <div className="fixed max-sm:hidden top-4 right-5 z-100">
+    <div className="hidden md:flex top-4 right-5 z-100 items-center">
       <NeonToggle darkMode={isDarkMode} toggle={toggle} />
     </div>
 

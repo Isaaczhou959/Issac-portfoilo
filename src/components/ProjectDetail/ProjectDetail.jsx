@@ -21,7 +21,7 @@ export const ProjectDetail = ({
           onClick={() => closePage(false)}
           className="absolute p-2 rounded-sm top-5 right-5 bg-midnight hover:bg-gray-500"
         >
-          <EyeOff className="w-6 h-6" color="white" />
+          <EyeOff className="w-6 h-6 cursor-pointer" color="white" />
         </button>
         <img src={image} alt={title} className="w-full rounded-t-2xl" />
         <div className="p-5">

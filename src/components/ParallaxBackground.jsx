@@ -19,7 +19,7 @@ const ParallaxBackground = () => {
           }}
         /> */}
         <motion.div
-          className="absolute inset-0 z-2"
+          className="absolute inset-0 z-2 scale-x-[-1]"
           style={{
             backgroundImage: "url(/parallaxbackground/mountain-3.png)",
             backgroundPosition: "bottom",
@@ -28,7 +28,7 @@ const ParallaxBackground = () => {
           }}
         />
         <motion.div
-          className="absolute inset-0 z-4"
+          className="absolute inset-0 z-4 scale-x-[-1]"
           style={{
             backgroundImage: "url(/parallaxbackground/planets.png)",
             backgroundPosition: "bottom",
@@ -37,7 +37,7 @@ const ParallaxBackground = () => {
           }}
         />
         <motion.div
-          className="absolute inset-0 z-6"
+          className="absolute inset-0 z-6 scale-x-[-1]"
           style={{
             backgroundImage: "url(/parallaxbackground/mountain-2.png)",
             backgroundPosition: "bottom",

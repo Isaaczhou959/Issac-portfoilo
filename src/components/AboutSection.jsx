@@ -7,7 +7,7 @@ import { SkillCircles } from "./SkillCircles/SkillCircles";
 export const AboutSection = () => {
   const grid2Contianer = useRef();
   return (
-    <section id="about" className="section-spacing c-space max-w-7xl mx-auto">
+    <section id="about" className="section-spacing c-space container">
       <h2 className="text-heading">
         About <span className="text-primary">me</span>
       </h2>

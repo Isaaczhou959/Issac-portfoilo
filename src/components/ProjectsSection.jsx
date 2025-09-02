@@ -132,7 +132,7 @@ export const ProjectsSection = () => {
     <section
       onMouseMove={handleMouseMove}
       id="projects"
-      className="relative c-space section-spacing max-w-7xl mx-auto"
+      className="relative c-space section-spacing container"
     >
       <h2 className="text-heading">Featured Projects</h2>
       <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent mt-12 h-[1px] w-full" />
