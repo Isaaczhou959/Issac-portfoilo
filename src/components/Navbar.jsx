@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { X, Menu } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -13,6 +13,7 @@ const navItems = [
 ];
 
 export const Navbar = () => {
+  const [navIndex, setNavIndex] = useState(0);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [show, setShow] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -62,11 +63,14 @@ export const Navbar = () => {
         {/* desktop version */}
 
         <div className="navbar hidden md:flex space-x-8 items-center ">
-          {navItems.map((item, key) => (
+          {navItems.map((item, index) => (
             <a
-              key={key}
+              key={index}
               href={item.href}
-              className="hoverbg text-foreground transition-colors duration-300 inline-block"
+              onClick={() => setNavIndex(index)}
+              className={`hoverbg text-foreground transition-colors duration-300 ${
+                navIndex === index ? "bg-purple-500" : ""
+              }`}
             >
               {item.name}
             </a>

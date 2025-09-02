@@ -222,11 +222,11 @@
 }
 
 .hoverbg {
-  @apply p-1.5 text-white rounded-md;
+  @apply p-1.5 text-white rounded-full;
 }
 
 .hoverbg:hover {
-  @apply bg-gray-300 text-primary rounded-md p-1.5;
+  @apply bg-gray-300 text-primary rounded-full p-1.5 hover:scale-105 active:scale-95;
 }
 
 @utility text-glow {
