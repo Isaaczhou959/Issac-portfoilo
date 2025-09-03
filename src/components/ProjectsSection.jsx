@@ -2,6 +2,7 @@ import { ArrowRightIcon } from "lucide-react";
 import { ProjectDetail } from "./ProjectDetail/ProjectDetail";
 import { useState } from "react";
 import { motion, useMotionValue, useSpring } from "motion/react";
+import { AuroraText } from "./ui/AuroraText";
 
 const projects = [
   {
@@ -134,7 +135,9 @@ export const ProjectsSection = () => {
       id="projects"
       className="relative c-space section-spacing container"
     >
-      <h2 className="text-heading">Featured Projects</h2>
+      <h2 className="text-heading">
+        <AuroraText>Featured</AuroraText> Projects
+      </h2>
       <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent mt-12 h-[1px] w-full" />
 
       {projects.map((project) => (
